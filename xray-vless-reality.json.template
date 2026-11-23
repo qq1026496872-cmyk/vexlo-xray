@@ -1,0 +1,27 @@
+{
+  "log": {"loglevel": "warning"},
+  "inbounds": [
+    {
+      "port": __PORT__,
+      "listen": "0.0.0.0",
+      "protocol": "vless",
+      "settings": {
+        "clients": [{ "id": "__UUID__", "flow": "xtls-rprx-vision" }],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "realitySettings": {
+          "show": false,
+          "dest": "__DEST__",
+          "xver": 0,
+          "serverNames": ["__SNI__"],
+          "privateKey": "__PRIVATE_KEY__",
+          "shortIds": ["__SHORT_ID__"]
+        }
+      }
+    }
+  ],
+  "outbounds": [{ "protocol": "freedom" }]
+}
